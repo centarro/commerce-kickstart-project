@@ -16,7 +16,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project centarro/kickstart-project some-dir --stability dev --no-interaction
+composer create-project centarro/commerce-kickstart-project some-dir --stability dev --no-interaction
 ```
 
 Done! Use `composer require ...` to download additional modules and themes:
