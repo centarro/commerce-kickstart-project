@@ -10,6 +10,10 @@
         }
     ],
     "repositories": {
+        "commerce_demo": {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/commerce_demo.git"
+        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
