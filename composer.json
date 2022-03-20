@@ -86,13 +86,6 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "file-mapping": {
-                "[web-root]/sites/default/settings.php": {
-                    "mode": "replace",
-                    "path": "[web-root]/profiles/contrib/commerce_kickstart/assets/settings.php",
-                    "overwrite": false
-                }
             }
         },
         "installer-types": [
