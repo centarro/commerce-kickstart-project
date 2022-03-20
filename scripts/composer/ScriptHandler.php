@@ -21,6 +21,7 @@ class ScriptHandler {
     $drupalFinder = new DrupalFinder();
     $drupalFinder->locateRoot(getcwd());
     $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
 
     $dirs = [
       'modules',
@@ -43,7 +44,7 @@ class ScriptHandler {
       require_once $drupalRoot . '/core/includes/install.inc';
       new Settings([]);
       $settings['settings']['config_sync_directory'] = (object) [
-        'value' => Path::makeRelative($drupalFinder->getComposerRoot() . '/config/sync', $drupalRoot),
+        'value' => Path::makeRelative($composerRoot . '/config/sync', $drupalRoot),
         'required' => TRUE,
       ];
       drupal_rewrite_settings($settings, $drupalRoot . '/sites/default/settings.php');
@@ -58,6 +59,9 @@ class ScriptHandler {
       umask($oldmask);
       $event->getIO()->write("Created a sites/default/files directory with chmod 0777");
     }
+    
+    // Mirror config splits from the profile to the project config directory.
+    $fs->mirror($drupalRoot . '/profiles/contrib/commerce_kickstart/config/splits', $composerRoot . '/config/splits');
   }
 
   /**
