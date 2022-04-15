@@ -14,10 +14,6 @@
             "type": "vcs",
             "url": "https://git.drupalcode.org/project/commerce_demo.git"
         },
-        "symfony_mailer": {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/project/symfony_mailer.git"
-        },
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
@@ -47,7 +43,6 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/core-dev": "^9.1",
         "drupal/core-composer-scaffold": "^9.1",
-        "drupal/symfony_mailer": "1.0.0-alpha7",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2",
@@ -116,12 +111,6 @@
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
             ]
-        },
-        "enable-patching": true,
-        "composer-exit-on-patch-failure": true,
-        "patches": {
-            "drupal/symfony_mailer": {
-                "#3275136 - Installation fails on symfony_mailer unmet dependency": "https://www.drupal.org/files/issues/2022-04-14/3275136-5.symfony_mailer_dependency.patch"
-            }
+        }
     }
 }
