@@ -115,6 +115,12 @@
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
             ]
-        }
+        },
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": true,
+        "patches": {
+            "drupal/symfony_mailer": {
+                "#3275136 - Installation fails on symfony_mailer unmet dependency": "https://www.drupal.org/files/issues/2022-04-14/3275136-5.symfony_mailer_dependency.patch"
+            }
     }
 }
