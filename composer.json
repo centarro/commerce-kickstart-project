@@ -5,14 +5,18 @@
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "",
-            "role": ""
+            "name": "Centarro",
+            "role": "info@centarro.io"
         }
     ],
     "repositories": {
         "commerce_demo": {
             "type": "vcs",
             "url": "https://git.drupalcode.org/project/commerce_demo.git"
+        },
+        "symfony_mailer": {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/project/symfony_mailer.git"
         },
         "drupal": {
             "type": "composer",
