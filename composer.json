@@ -14,7 +14,7 @@
             "type": "vcs",
             "url": "https://git.drupalcode.org/project/commerce_demo.git"
         },
-        {
+        "jquery-ui-touch-punch": {
             "type": "package",
             "package": {
                 "name": "furf/jquery-ui-touch-punch",
@@ -26,7 +26,7 @@
                 }
             }
         },
-        {
+        "select2": {
             "type": "package",
             "package": {
                 "name": "select2/select2",
