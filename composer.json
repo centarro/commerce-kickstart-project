@@ -115,10 +115,6 @@
                 "[web-root]/libraries/select2/dist/css/select2.min.css": "libraries/select2/dist/css/select2.min.css"   
             }
         },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "libraries/{$name}": [
