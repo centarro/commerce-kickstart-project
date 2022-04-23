@@ -64,6 +64,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/core-dev": "^9.1",
         "drupal/core-composer-scaffold": "^9.1",
+        "drupal/default_content": "2.0.0-alpha1",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2",
