@@ -1,0 +1,129 @@
+From 09cf17028ae510e99e0430ce735536bc37d0d3ea Mon Sep 17 00:00:00 2001
+From: Emil Johnsson <emil@kodamera.se>
+Date: Tue, 1 Feb 2022 13:09:02 +0100
+Subject: [PATCH 1/2] Applied patch from #37 by heddn
+
+---
+ src/Normalizer/ContentEntityNormalizer.php | 38 ++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
+
+diff --git a/src/Normalizer/ContentEntityNormalizer.php b/src/Normalizer/ContentEntityNormalizer.php
+index 08d68ee..3ece0fa 100644
+--- a/src/Normalizer/ContentEntityNormalizer.php
++++ b/src/Normalizer/ContentEntityNormalizer.php
+@@ -22,6 +22,8 @@ use Drupal\pathauto\PathautoState;
+ use Drupal\serialization\Normalizer\SerializedColumnNormalizerTrait;
+ use Drupal\user\UserInterface;
+ use Symfony\Component\Serializer\Exception\UnexpectedValueException;
++use Drupal\layout_builder\Section;
++use Drupal\layout_builder\Plugin\DataType\SectionData;
+ 
+ /**
+  * Normalizes and denormalizes content entities.
+@@ -253,6 +255,22 @@ class ContentEntityNormalizer implements ContentEntityNormalizerInterface {
+           }
+           $property->setValue($target_entity);
+         }
++        elseif ($property instanceof SectionData) {
++          // Rebuild references on layout_builder.
++          foreach ($value['components'] as $key => $component) {
++            if (isset($component['configuration']['id'])) {
++              [$component_type] = explode(PluginBase::DERIVATIVE_SEPARATOR, $component['configuration']['id']);
++              if ($component_type == 'inline_block') {
++                $target_uuid = $component['additional']['target_uuid'] ?? NULL;
++                if ($target_uuid && $block_content = $this->entityRepository->loadEntityByUuid('block_content', $target_uuid)) {
++                  $value['components'][$key]['configuration']['block_revision_id'] = $block_content->getRevisionId();
++                }
++              }
++            }
++          }
++          $section_value = Section::fromArray($value);
++          $property->setValue($section_value);
++        }
+         else {
+           $property->setValue($value);
+         }
+@@ -419,6 +437,26 @@ class ContentEntityNormalizer implements ContentEntityNormalizerInterface {
+         $value = $target->uuid();
+       }
+     }
++    elseif ($property instanceof SectionData && $property->getValue() instanceof Section) {
++      $value = $property->getValue()->toArray();
++
++      // Layout Sections reference inline blocks by id, we need to reference by
++      // UUID and make sure the section has a dependency on the inline_block.
++      foreach ($value['components'] as $key => $component) {
++        if (isset($component['configuration']['id'])) {
++          // This is only valid for inline_block.
++          [$component_type, $component_bundle] = explode(PluginBase::DERIVATIVE_SEPARATOR, $component['configuration']['id']);
++          if ($component_type == 'inline_block') {
++            $block_revision_id = $component['configuration']['block_revision_id'];
++            $block_content = $this->entityTypeManager->getStorage('block_content')->loadRevision($block_revision_id);
++            if ($block_content) {
++              $value['components'][$key]['additional']['target_uuid'] = $block_content->uuid();
++              $this->addDependency($block_content);
++            }
++          }
++        }
++      }
++    }
+     elseif ($property instanceof Uri) {
+       $value = $property->getValue();
+       $scheme = parse_url($value, PHP_URL_SCHEME);
+-- 
+GitLab
+
+
+From 3cd0c7f52f9dff759518fa5d940cb000abfdd37f Mon Sep 17 00:00:00 2001
+From: Emil Johnsson <emil@kodamera.se>
+Date: Tue, 1 Feb 2022 13:09:10 +0100
+Subject: [PATCH 2/2] Applied patch from #41 by S3b0uN3t (with code cleanup)
+
+---
+ src/Exporter.php | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/src/Exporter.php b/src/Exporter.php
+index e0df909..3443118 100644
+--- a/src/Exporter.php
++++ b/src/Exporter.php
+@@ -11,6 +11,7 @@ use Drupal\Core\Serialization\Yaml;
+ use Drupal\default_content\Event\DefaultContentEvents;
+ use Drupal\default_content\Event\ExportEvent;
+ use Drupal\default_content\Normalizer\ContentEntityNormalizerInterface;
++use Drupal\layout_builder\Plugin\Block\InlineBlock;
+ use Drupal\user\UserInterface;
+ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+ 
+@@ -199,6 +200,28 @@ class Exporter implements ExporterInterface {
+   protected function getEntityReferencesRecursive(ContentEntityInterface $entity, $depth = 0, array &$indexed_dependencies = []) {
+     $entity_dependencies = $entity->referencedEntities();
+ 
++    // Get dependencies from layout builder.
++    if ($entity->hasField('layout_builder__layout')) {
++      $section_data = $entity->get('layout_builder__layout');
++      foreach ($section_data->getSections() as $section) {
++        $components = $section->getComponents();
++        foreach ($components as $component) {
++          $plugin = $component->getPlugin();
++          if ($plugin instanceof InlineBlock) {
++            $configuration = $component->get('configuration');
++            if (!empty($block_revision_id = $configuration['block_revision_id'])) {
++              $block_content = $this->entityTypeManager
++                ->getStorage('block_content')
++                ->loadRevision($block_revision_id);
++              if ($block_content) {
++                $entity_dependencies[] = $block_content;
++              }
++            }
++          }
++        }
++      }
++    }
++
+     foreach ($entity_dependencies as $dependent_entity) {
+       // Config entities should not be exported but rather provided by default
+       // config.
+-- 
+GitLab
+

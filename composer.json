@@ -101,9 +101,14 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patches": {  },
+        "patches": {
+            "drupal/default_content": {
+                "#3160146 Add a Normalizer and Denormalizer to support Layout Builder": "patches/default_content/3160146-layout-builder.patch"
+            }
+        },
         "patchLevel": {
-            "drupal/core": "-p2"
+            "drupal/core": "-p2",
+            "drupal/default_content": "-p1"
         },
         "drupal-scaffold": {
             "locations": {
@@ -113,7 +118,7 @@
             "file-mapping": {
                 "[web-root]/libraries/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js": "libraries/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js",
                 "[web-root]/libraries/select2/dist/js/select2.min.js": "libraries/select2/dist/js/select2.min.js",
-                "[web-root]/libraries/select2/dist/css/select2.min.css": "libraries/select2/dist/css/select2.min.css"   
+                "[web-root]/libraries/select2/dist/css/select2.min.css": "libraries/select2/dist/css/select2.min.css"
             }
         },
         "installer-paths": {
