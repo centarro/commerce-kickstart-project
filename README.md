@@ -117,11 +117,11 @@ section of composer.json:
 
 ### How can I add js/css libraries using composer.json?
 
-It is possible to install JavaScript libraries with Composer using custom packages as this project does. We previously relied on asset-packagist to do this but had to change our approach after the repository went defunct. Refer to [this tutorial](https://ryanszrama.com/blog/04-18-2022/replace-asset-packagist-custom-package-repositories) for more information.
+It is possible to install JavaScript libraries with Composer using custom packages as this project does, downloading the packages outside of the docroot and copying over just the necessary files into the Drupal libraries directory. We previously relied on asset-packagist to do this but had to change our approach after the repository went defunct. Refer to [this tutorial](https://ryanszrama.com/blog/04-18-2022/replace-asset-packagist-custom-package-repositories) for more information.
 
 ### How do I specify a PHP version ?
 
-This project supports PHP 7.1 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7.1+.
+This project supports PHP 8.1 as minimum version (see [Drupal PHP requirements](https://www.drupal.org/docs/system-requirements/php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require a newer version.
 
 To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
 ```json
