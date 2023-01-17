@@ -102,11 +102,6 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patches": {
-            "drupal/default_content": {
-                "#3160146 Add a Normalizer and Denormalizer to support Layout Builder": "patches/default_content/3160146-layout-builder.patch"
-            }
-        },
         "patchLevel": {
             "drupal/core": "-p2",
             "drupal/default_content": "-p1"
