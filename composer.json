@@ -51,6 +51,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
             "oomphinc/composer-installers-extender": true,
             "phpstan/extension-installer": true,
             "zaporylie/composer-drupal-optimizations": true
@@ -63,8 +64,8 @@
         "centarro/commerce_kickstart": "^3.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^10.1",
-        "drupal/core-project-message": "^10.1",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-project-message": "^10",
         "drupal/core-recommended": "^10.1",
         "drupal/default_content": "^2",
         "drush/drush": "^11.4",
@@ -86,16 +87,6 @@
             "scripts/composer/ScriptHandler.php"
         ],
         "files": ["load.environment.php"]
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        },
-        "sort-packages": true
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
