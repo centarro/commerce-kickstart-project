@@ -135,9 +135,9 @@
          "drupal-core-project-message": {
             "include-keys": ["homepage", "support"],
             "post-create-project-cmd-message": [
-                "<bg=purple;fg=white>                                                                 </>",
-                "<bg=purple;fg=white>  Congratulations, you’ve installed Commerce Kickstart version 3!</>",
-                "<bg=purple;fg=white>                                                                 </>",
+                "<bg=bright-magenta;fg=white>                                                                 </>",
+                "<bg=bright-magenta;fg=white>  Congratulations, you’ve installed Commerce Kickstart version 3!</>",
+                "<bg=bright-magenta;fg=white>                                                                 </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
 
