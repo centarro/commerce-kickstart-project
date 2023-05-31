@@ -65,7 +65,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
-        "drupal/core-recommended": "^10.1"
+        "drupal/core-recommended": "^10.1",
         "drupal/default_content": "^2",
         "drush/drush": "^11.4",
         "vlucas/phpdotenv": "^5.1",
