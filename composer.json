@@ -150,15 +150,15 @@
          "drupal-core-project-message": {
             "include-keys": ["homepage", "support"],
             "post-create-project-cmd-message": [
-                "<bg=magenta;fg=white>                                                                   </>",
-                "<bg=magenta;fg=white>  Congratulations, you’ve installed Commerce Kickstart version 3!  </>",
-                "<bg=magenta;fg=white>                                                                   </>",
+                "<bg=magenta;fg=white>                                                      </>",
+                "<bg=magenta;fg=white>  Congratulations, you installed Commerce Kickstart!  </>",
+                "<bg=magenta;fg=white>                                                      </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
 
                 "  * Install the site: https://www.drupal.org/docs/installing-drupal",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
+                "  * Read the Drupal Commerce docs: https://docs.drupalcommerce.org/commerce2",
+                "  * Get support: https://drupal.stackexchange.com/",
                 "  * Get involved with the Drupal community:",
                 "      https://www.drupal.org/getting-involved",
                 "  * Remove the plugin that prints this message:",
