@@ -53,6 +53,7 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "oomphinc/composer-installers-extender": true,
+            "php-http/discovery" : true,
             "phpstan/extension-installer": true,
             "zaporylie/composer-drupal-optimizations": true
         }
