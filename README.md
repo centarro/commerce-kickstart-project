@@ -122,7 +122,7 @@ It is possible to install JavaScript libraries with Composer using custom packag
 
 ### How do I specify a PHP version ?
 
-This project supports PHP 8.1 as minimum version (see [Drupal PHP requirements](https://www.drupal.org/docs/system-requirements/php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require a newer version.
+This project supports PHP 8.3 as minimum version (see [Drupal PHP requirements](https://www.drupal.org/docs/system-requirements/php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require a newer version.
 
 To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
 ```json
