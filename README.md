@@ -1,9 +1,6 @@
-# Centarro Commerce Kickstart 3.x project template
+# Centarro Commerce Kickstart 4.x project template
 
-Use [Composer](https://getcomposer.org/) to get Drupal + Centarro Commerce Kickstart 3.x.
-
-Also look at [drupalcommerce/demo-project](https://github.com/drupalcommerce/demo-project)
-for a version with demo content.
+Use [Composer](https://getcomposer.org/) to get Drupal + Centarro Commerce Kickstart 4.0.x.
 
 ## Usage
 
@@ -19,12 +16,12 @@ After that you can create the project:
 composer create-project -s dev centarro/commerce-kickstart-project kickstart
 ```
 
-Done! Use `composer require ...` to download additional modules and themes. For example, if you want to install the full demo store, you'd change into the 
-target directory and require `commerce_demo`:
+Done! Use `composer require ...` to download additional modules and themes. For example, if you want to install the full demo store, you'd change into the
+target directory and require `commerce_kickstart_demo`:
 
 ```
 cd kickstart
-composer require drupal/commerce_demo:^3.0
+composer require drupal/commerce_kickstart_demo
 ```
 
 The `composer create-project` command passes ownership of all files to the
@@ -37,6 +34,7 @@ all files not excluded by the .gitignore file.
 * Modules (packages of type `drupal-module`) are placed in `web/modules/contrib/`
 * Theme (packages of type `drupal-theme`) are placed in `web/themes/contrib/`
 * Profiles (packages of type `drupal-profile`) are placed in `web/profiles/contrib/`
+* Recipes (packages of type `drupal-recipe`) are placed in `recipes/`
 * Creates default writable versions of `settings.php` and `services.yml`.
 * Creates the `web/sites/default/files` directory.
 * Latest version of DrupalConsole is installed locally for use at `bin/drupal`.

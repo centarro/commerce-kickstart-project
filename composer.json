@@ -18,10 +18,6 @@
             "type": "vcs",
             "url": "https://git.drupalcode.org/issue/bootstrap_basic_image_gallery-3429041.git"
         },
-        "commerce_demo": {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/project/commerce_demo.git"
-        },
         "jquery-ui-touch-punch": {
             "type": "package",
             "package": {
@@ -61,6 +57,7 @@
         "centarro/commerce_kickstart": "^4.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
+        "drupal/commerce_kickstart_demo": "1.0.x-dev",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
