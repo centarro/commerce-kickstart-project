@@ -16,17 +16,31 @@ After that you can create the project:
 composer create-project -s dev centarro/commerce-kickstart-project kickstart
 ```
 
-Done! Use `composer require ...` to download additional modules and themes. For example, if you want to install the full demo store, you'd change into the
-target directory and require `commerce_kickstart_demo`:
+Done! Use `composer require ...` to download additional modules and themes. For example, if you want to install the
+certified Centarro modules you'd change into the target directory and require `centarro/certified-projects`:
 
 ```
 cd kickstart
-composer require drupal/commerce_kickstart_demo
+composer require centarro/certified-projects
 ```
 
 The `composer create-project` command passes ownership of all files to the
 project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
+
+## Demo content
+
+Starting from Commerce Kickstart 5, this project includes the
+[Kickstart Demo](https://www.drupal.org/project/commerce_kickstart_demo) recipe by default. The full demo is designed
+specifically for evaluating Drupal Commerce or Commerce Kickstart and should only be installed on new Kickstart
+instances. It is **not intended** for existing Drupal installations. Installing the Kickstart Demo is optional.
+
+If you don't need the demo, you can remove it using the following command:
+
+```bash
+cd kickstart
+composer remove drupal/commerce_kickstart_demo
+```
 
 ## What does the template do?
 
