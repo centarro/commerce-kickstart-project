@@ -54,7 +54,7 @@
         "php": ">=8.3",
         "ext-curl": "*",
         "centarro/certified-projects": "^1.0",
-        "centarro/commerce_kickstart": "^4.0",
+        "centarro/commerce_kickstart": "^5.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/commerce_kickstart_demo": "1.0.x-dev",
