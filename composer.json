@@ -57,7 +57,7 @@
         "centarro/commerce_kickstart": "^5.0",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/commerce_kickstart_demo": "1.0.x-dev",
+        "drupal/commerce_kickstart_demo": "^1",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
@@ -97,11 +97,7 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patches": {
-            "drupal/default_content": {
-                "#3160146 Add a Normalizer and Denormalizer to support Layout Builder": "patches/default_content/3160146-layout-builder.patch"
-            }
-        },
+        "patches": {},
         "patchLevel": {
             "drupal/core": "-p2",
             "drupal/default_content": "-p1"
