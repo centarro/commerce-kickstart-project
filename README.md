@@ -21,7 +21,7 @@ target directory and require `commerce_kickstart_demo`:
 
 ```
 cd kickstart
-composer require drupal/commerce_kickstart_demo
+composer require drupal/commerce_demo:^3.0
 ```
 
 The `composer create-project` command passes ownership of all files to the
