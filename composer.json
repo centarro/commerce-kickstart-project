@@ -1,6 +1,6 @@
 {
     "name": "centarro/commerce-kickstart-project",
-    "description": "Centarro Commerce Kickstart 3.x project template",
+    "description": "Centarro Commerce Kickstart 5.x project template",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -97,7 +97,11 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patches": {},
+        "patches": {
+            "drupal/belgrade": {
+                "Issue #3508597: cklb-slideshow was moved from commerce_kickstart_layout_builder into commerce_kickstart_demo_assets": "https://git.drupalcode.org/project/belgrade/-/commit/45d9b257f112385a8abcd6b2c143e2b55a990a7c.diff"
+            }
+        },
         "patchLevel": {
             "drupal/core": "-p2",
             "drupal/default_content": "-p1"

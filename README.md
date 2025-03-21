@@ -1,4 +1,4 @@
-# Centarro Commerce Kickstart 4.x project template
+# Centarro Commerce Kickstart 5.x project template
 
 Use [Composer](https://getcomposer.org/) to get Drupal + Centarro Commerce Kickstart 4.0.x.
 
