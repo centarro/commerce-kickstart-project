@@ -98,8 +98,8 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/belgrade": {
-                "Issue #3508597: cklb-slideshow was moved from commerce_kickstart_layout_builder into commerce_kickstart_demo_assets": "https://git.drupalcode.org/project/belgrade/-/commit/45d9b257f112385a8abcd6b2c143e2b55a990a7c.diff"
+            "drupal/admin_toolbar": {
+                "Issue #3506824 by dydave: Fixed compatibility with Project Browser": "https://git.drupalcode.org/project/admin_toolbar/-/merge_requests/117.diff"
             }
         },
         "patchLevel": {
