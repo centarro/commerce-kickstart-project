@@ -98,9 +98,6 @@
     "extra": {
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "drupal/admin_toolbar": {
-                "Issue #3506824 by dydave: Fixed compatibility with Project Browser": "https://git.drupalcode.org/project/admin_toolbar/-/merge_requests/117.diff"
-            }
         },
         "patchLevel": {
             "drupal/core": "-p2",
