@@ -14,10 +14,6 @@
             "type": "vcs",
             "url": "https://git.drupalcode.org/issue/block_visibility_conditions-3450896.git"
         },
-        "bootstrap_basic_image_gallery": {
-            "type": "vcs",
-            "url": "https://git.drupalcode.org/issue/bootstrap_basic_image_gallery-3429041.git"
-        },
         "jquery-ui-touch-punch": {
             "type": "package",
             "package": {
