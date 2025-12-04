@@ -40,6 +40,7 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
+            "drupal/core-recipe-unpack": true,
             "oomphinc/composer-installers-extender": true,
             "phpstan/extension-installer": true,
             "php-http/discovery": true,
