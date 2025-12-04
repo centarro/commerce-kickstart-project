@@ -58,6 +58,7 @@
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
+        "drupal/core-recipe-unpack": "^11",
         "drush/drush": "^13",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2",
