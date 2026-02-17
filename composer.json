@@ -50,7 +50,7 @@
     "require": {
         "php": ">=8.3",
         "ext-curl": "*",
-        "centarro/certified-projects": "^2",
+        "centarro/certified-projects": "^3",
         "centarro/commerce_kickstart": "^5.1",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
