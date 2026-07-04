@@ -100,7 +100,6 @@
         "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/core": {
-                "restore-core-recipes": "https://git.drupalcode.org/project/drupal/-/merge_requests/16195.diff",
                 "fix-backendcacheinterface": "https://git.drupalcode.org/project/drupal/-/merge_requests/16210.diff"
             }
         },
