@@ -2,7 +2,7 @@
     "name": "centarro/commerce-kickstart-project",
     "description": "Centarro Commerce Kickstart 5.x project template",
     "type": "project",
-    "license": "GPL-2.0-or-later",
+    "license": "MIT"
     "authors": [
         {
             "name": "Centarro",
