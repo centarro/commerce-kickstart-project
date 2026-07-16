@@ -99,11 +99,7 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patches": {
-            "drupal/core": {
-                "fix-backendcacheinterface": "https://git.drupalcode.org/project/drupal/-/merge_requests/16210.diff"
-            }
-        },
+        "patches": {},
         "patchLevel": {
             "drupal/core": "-p2",
             "drupal/default_content": "-p1"
